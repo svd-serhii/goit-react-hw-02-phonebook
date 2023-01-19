@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ContactsForm extends Component {
+class Form extends Component {
   state = { name: '', number: '' };
 
   handleChange = e => {
@@ -12,6 +12,12 @@ class ContactsForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    this.props.onSubmit(this.state);
+    this.reset();
+  };
+
+  reset = e => {
+    this.setState({ name: '', number: '' });
   };
 
   render() {
@@ -49,4 +55,4 @@ class ContactsForm extends Component {
   }
 }
 
-export default ContactsForm;
+export default Form;
