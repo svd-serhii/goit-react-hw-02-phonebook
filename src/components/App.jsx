@@ -39,8 +39,7 @@ class App extends Component {
   };
 
   filterContact = e => {
-    const { value } = e.currentTarget;
-    this.setState({ filter: value });
+    this.setState({ filter: e.currentTarget.value });
   };
 
   deleteContact = contactId => {
