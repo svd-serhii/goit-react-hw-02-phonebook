@@ -50,6 +50,7 @@ class App extends Component {
   };
 
   render() {
+    const filteredList = this.searchContact();
     return (
       <div className={styles.container}>
         <h1 className={styles.mainTitle}>Phonebook</h1>
@@ -58,7 +59,7 @@ class App extends Component {
         <div className={styles.wrap}>
           <Filter value={this.state.filter} onChange={this.filterContact} />
           <ContactsList
-            contacts={this.state.contacts}
+            contacts={filteredList}
             onDeleteContact={this.deleteContact}
           />
         </div>
